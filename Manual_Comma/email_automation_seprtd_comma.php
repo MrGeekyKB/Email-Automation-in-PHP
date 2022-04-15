@@ -7,12 +7,11 @@
   </head>
   <body>
 <?php
-include '../../config/config1.php';
 $sender = "kartiktheno1king@gmail.com";
 if(isset($_POST['submit'])){
-    $emails = mysqli_real_escape_string($con,$_POST['emails']);
-    $subject = mysqli_real_escape_string($con,$_POST['subject']);
-    $message = mysqli_real_escape_string($con,$_POST['message']);
+    $emails = $_POST['emails'];
+    $subject =$_POST['subject'];
+    $message = $_POST['message'];
     $message = str_replace('\r\n', '&#10;', $message);
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers = "From: $sender" . "\r\n";
